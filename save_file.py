@@ -6,7 +6,7 @@ import cgi, os
 form = cgi.FieldStorage()
 
 # Get filename here.
-fileitem = form['file']
+fileitem = form['filename']
 
 # Test if the file was uploaded
 if fileitem.filename:
@@ -21,11 +21,5 @@ if fileitem.filename:
 else:
    message = 'No file was uploaded'
 
-print ("""\
-Content-Type: text/html\n
-<html>
-<body>
-   <p>%s</p>
-</body>
-</html>
-""" % (message,))
+print ("Content-type:text/html\r\n\r\n")
+print (message)
